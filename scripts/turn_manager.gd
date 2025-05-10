@@ -17,16 +17,8 @@ func next_turn():
 	# очистка старых точек для нажатия
 	for tile:Vector2i in InputHandler.can_click_array:
 		Global.tilemap.set_cell(tile, 0, Vector2i(0, 0))
-	InputHandler.can_click_array = []
-	# заполнение can_click_array
-	for move_line:MoveLine in Global.player.line_combiner.lines:
-		var pl_tile_pos := Global.tilemap.local_to_map(Global.player.position)
-		var from = Global.tilemap.map_to_local(pl_tile_pos + move_line.from)
-		var to = Global.tilemap.map_to_local(pl_tile_pos + move_line.to)
-		var tiles_on_line = Global.get_tiles_on_line(Global.tilemap, from, to)
-		for tile:Vector2i in tiles_on_line:
-			if not tile in InputHandler.can_click_array and pl_tile_pos != tile:
-				InputHandler.can_click_array += [tile] 
+	# обновление can_click_array
+	InputHandler.update_can_click_array()
 	# создание новых точек для нажатия
 	for tile:Vector2i in InputHandler.can_click_array:
 		Global.tilemap.set_cell(tile, 0, Vector2i(1, 0))
