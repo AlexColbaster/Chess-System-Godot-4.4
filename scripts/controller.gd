@@ -9,5 +9,5 @@ var entity:Node2D
 func _init(_entity:Node2D) -> void:
 	entity = _entity
 
-func move(tile_pos:Vector2):
+func move(_tile_pos:Vector2):
 	pass
