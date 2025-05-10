@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=4 uid="uid://cgsjmhd0qdvme"]
+
+[ext_resource type="Texture2D" uid="uid://dg77a312phrbq" path="res://sprites/tileset.png" id="1_jyhfs"]
+[ext_resource type="Script" uid="uid://b1dpknkx06e1x" path="res://scripts/player.gd" id="2_tbgi4"]
+[ext_resource type="Script" uid="uid://n4fd3m0qblbn" path="res://scripts/move.gd" id="3_tefeu"]
+[ext_resource type="Texture2D" uid="uid://csa5awpnhptuu" path="res://icon.svg" id="4_o6xl0"]
+[ext_resource type="Script" uid="uid://bfebylpa21yli" path="res://scripts/ui.gd" id="5_tbgi4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjrb6"]
+texture = ExtResource("1_jyhfs")
+texture_region_size = Vector2i(32, 24)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -12, 16, 0, 0, 12, -16, 0)
+
+[sub_resource type="TileSet" id="TileSet_7dm0k"]
+tile_shape = 1
+tile_layout = 5
+tile_offset_axis = 1
+tile_size = Vector2i(32, 24)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_pjrb6")
+
+[sub_resource type="Resource" id="Resource_jyhfs"]
+script = ExtResource("3_tefeu")
+angle = 0.0
+length = 0
+metadata/_custom_type_script = "uid://n4fd3m0qblbn"
+
+[node name="Main" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAADAP7/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAFAP7/AAAAAAAAAAAFAP//AAAAAAAAAAAEAP//AAAAAAAAAAAEAP7/AAAAAAAAAAAAAAIAAAAAAAAAAAD//wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wMAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAIAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAD/////AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_7dm0k")
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("2_tbgi4")
+moves = Array[ExtResource("3_tefeu")]([SubResource("Resource_jyhfs")])
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="Icon" type="Sprite2D" parent="Player"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_o6xl0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
+script = ExtResource("5_tbgi4")
+
+[node name="Turn" type="Label" parent="Player/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
