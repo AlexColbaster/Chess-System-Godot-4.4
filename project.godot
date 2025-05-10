@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-InputHandler="*res://input_handler.gd"
+InputHandler="*res://scripts/input_handler.gd"
 Global="*res://scripts/global.gd"
 TurnManager="*res://scripts/turn_manager.gd"
 
