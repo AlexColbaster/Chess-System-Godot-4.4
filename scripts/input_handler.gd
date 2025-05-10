@@ -15,11 +15,11 @@ func _input(event: InputEvent) -> void:
 			
 func update_can_click_array():
 	can_click_array = []
+	var pl_tile_pos := Global.tilemap.local_to_map(Global.player.position)
 	for move_line:MoveLine in Global.player.line_combiner.lines:
-		var pl_tile_pos := Global.tilemap.local_to_map(Global.player.position)
 		var from = Global.tilemap.map_to_local(pl_tile_pos + move_line.from)
 		var to = Global.tilemap.map_to_local(pl_tile_pos + move_line.to)
 		var tiles_on_line = Global.get_tiles_on_line(from, to)
 		for tile:Vector2i in tiles_on_line:
-			if not tile in can_click_array and pl_tile_pos != tile:
+			if pl_tile_pos != tile:
 				can_click_array += [tile] 
