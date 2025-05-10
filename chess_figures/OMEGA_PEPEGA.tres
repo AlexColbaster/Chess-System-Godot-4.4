@@ -1,30 +1,18 @@
-[gd_resource type="Resource" script_class="LineCombiner" load_steps=13 format=3 uid="uid://y8p82ys42r38"]
+[gd_resource type="Resource" script_class="LineCombiner" load_steps=11 format=3 uid="uid://y8p82ys42r38"]
 
 [ext_resource type="Script" uid="uid://n4fd3m0qblbn" path="res://scripts/move_line.gd" id="1_3rnjp"]
 [ext_resource type="Script" uid="uid://l84nt1cyc33h" path="res://scripts/line_combiner.gd" id="2_jnuws"]
 
 [sub_resource type="Resource" id="Resource_p54rw"]
 script = ExtResource("1_3rnjp")
-from = Vector2i(0, 0)
+from = Vector2i(-5, 0)
 to = Vector2i(5, 0)
-metadata/_custom_type_script = "uid://n4fd3m0qblbn"
-
-[sub_resource type="Resource" id="Resource_t7dyq"]
-script = ExtResource("1_3rnjp")
-from = Vector2i(0, 0)
-to = Vector2i(-5, 0)
 metadata/_custom_type_script = "uid://n4fd3m0qblbn"
 
 [sub_resource type="Resource" id="Resource_d3e86"]
 script = ExtResource("1_3rnjp")
-from = Vector2i(0, 0)
+from = Vector2i(0, -5)
 to = Vector2i(0, 5)
-metadata/_custom_type_script = "uid://n4fd3m0qblbn"
-
-[sub_resource type="Resource" id="Resource_l5jj1"]
-script = ExtResource("1_3rnjp")
-from = Vector2i(0, 0)
-to = Vector2i(0, -5)
 metadata/_custom_type_script = "uid://n4fd3m0qblbn"
 
 [sub_resource type="Resource" id="Resource_scvp8"]
@@ -65,5 +53,5 @@ metadata/_custom_type_script = "uid://n4fd3m0qblbn"
 
 [resource]
 script = ExtResource("2_jnuws")
-lines = Array[ExtResource("1_3rnjp")]([SubResource("Resource_p54rw"), SubResource("Resource_t7dyq"), SubResource("Resource_d3e86"), SubResource("Resource_l5jj1"), SubResource("Resource_scvp8"), SubResource("Resource_dvueq"), SubResource("Resource_sngen"), SubResource("Resource_wd47h"), SubResource("Resource_3rnjp"), SubResource("Resource_jnuws")])
+lines = Array[ExtResource("1_3rnjp")]([SubResource("Resource_p54rw"), SubResource("Resource_d3e86"), SubResource("Resource_scvp8"), SubResource("Resource_dvueq"), SubResource("Resource_sngen"), SubResource("Resource_wd47h"), SubResource("Resource_3rnjp"), SubResource("Resource_jnuws")])
 metadata/_custom_type_script = "uid://l84nt1cyc33h"
