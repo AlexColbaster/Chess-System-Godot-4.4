@@ -41,14 +41,14 @@ metadata/_custom_type_script = "uid://n4fd3m0qblbn"
 
 [sub_resource type="Resource" id="Resource_3rnjp"]
 script = ExtResource("1_3rnjp")
-from = Vector2i(-7, -7)
-to = Vector2i(7, 7)
+from = Vector2i(-5, -5)
+to = Vector2i(5, 5)
 metadata/_custom_type_script = "uid://n4fd3m0qblbn"
 
 [sub_resource type="Resource" id="Resource_jnuws"]
 script = ExtResource("1_3rnjp")
-from = Vector2i(7, -7)
-to = Vector2i(-7, 7)
+from = Vector2i(5, -5)
+to = Vector2i(-5, 5)
 metadata/_custom_type_script = "uid://n4fd3m0qblbn"
 
 [resource]
